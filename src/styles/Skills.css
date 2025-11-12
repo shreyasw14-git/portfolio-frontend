@@ -1,0 +1,349 @@
+/* Skills & Certifications Page Styles */
+
+.skills-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 2rem 6rem;
+}
+
+/* Header Section */
+.skills-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+.skills-page-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  margin-bottom: 1rem;
+}
+
+.skills-intro {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Section Titles */
+.skills-section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+/* Technical Skills Section */
+.technical-skills-section {
+  margin-bottom: 5rem;
+}
+
+.technical-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.technical-skill-card {
+  background-color: var(--color-bg-secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.technical-skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 6px 20px rgba(46, 115, 255, 0.1);
+}
+
+.skill-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-accent-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon {
+  color: var(--color-accent-primary);
+}
+
+.skill-category {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill-list li {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.skill-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-primary);
+  font-size: 1.1rem;
+}
+
+/* Software Proficiency Section */
+.software-section {
+  margin-bottom: 5rem;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.software-badge {
+  background-color: var(--color-bg-secondary);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.software-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 4px 12px rgba(46, 115, 255, 0.08);
+}
+
+.software-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.software-category {
+  font-size: 0.8rem;
+  color: var(--color-accent-primary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Certifications Section */
+.certifications-section {
+  margin-bottom: 5rem;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.certification-card {
+  background-color: var(--color-bg-secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+.certification-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 6px 20px rgba(46, 115, 255, 0.1);
+}
+
+.cert-icon-wrapper {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  background-color: var(--color-accent-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-icon {
+  color: var(--color-accent-primary);
+}
+
+.cert-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cert-name {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cert-issuer {
+  font-size: 0.95rem;
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.cert-description {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Soft Skills Section */
+.soft-skills-section {
+  margin-bottom: 4rem;
+}
+
+.soft-skills-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  grid-auto-rows: 1fr;
+}
+
+.soft-skill-item {
+  background-color: var(--color-bg-secondary);
+  padding: 1.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.soft-skill-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 4px 12px rgba(46, 115, 255, 0.08);
+}
+
+.soft-skill-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-accent-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-primary);
+}
+
+.soft-skill-content {
+  flex: 1;
+}
+
+.soft-skill-name {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.soft-skill-description {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .technical-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .software-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .soft-skills-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-page {
+    padding: 1rem 1rem 4rem;
+  }
+
+  .skills-page-title {
+    font-size: 2.5rem;
+  }
+
+  .skills-intro {
+    font-size: 1rem;
+  }
+
+  .skills-section-title {
+    font-size: 1.75rem;
+  }
+
+  .technical-skill-card {
+    padding: 1.5rem;
+  }
+
+  .software-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certification-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .soft-skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .soft-skill-item {
+    padding: 1.5rem;
+  }
+}
