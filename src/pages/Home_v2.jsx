@@ -174,7 +174,7 @@ const Home = () => {
       <section className="quick-links-section">
         <div className="quick-links-container">
           <a href="#" className="quick-link-btn">
-            <Download size={18} /> Download Resume
+            <Download size={18} /> View Resume
           </a>
           <a 
             href="https://www.linkedin.com/in/shreyas-wankhede/" 

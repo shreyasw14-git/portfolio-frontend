@@ -34,7 +34,7 @@ const About = () => {
               <p>My background bridges materials engineering, design simulation, and process optimization, making me particularly drawn to roles in <span className="highlight-text">Product Development</span>, <span className="highlight-text">Manufacturing Engineering</span>, and <span className="highlight-text">R&D</span>.</p>
             </div>
             <button className="btn-download-resume">
-              <Download size={18} /> Download Resume
+              <Download size={18} /> View Resume
             </button>
           </div>
         </div>

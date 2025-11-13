@@ -40,7 +40,7 @@ const Home = () => {
                 Get in Touch
               </button>
               <a href="#" className="btn-outline">
-                <Download size={18} /> Download Resume
+                <Download size={18} /> View Resume
               </a>
             </div>
           </div>
@@ -324,7 +324,7 @@ const Home = () => {
               <Linkedin size={20} /> LinkedIn
             </a>
             <a href="#" className="contact-btn">
-              <Download size={20} /> Download Resume
+              <Download size={20} /> View Resume
             </a>
             <a href="https://calendly.com/shreyas-ca14/30min" target="_blank" rel="noopener noreferrer" className="contact-btn">
               <Calendar size={20} /> Book 1-on-1 Meeting

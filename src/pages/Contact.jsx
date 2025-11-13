@@ -110,13 +110,13 @@ const Contact = () => {
                 <p className="link-value">linkedin.com/in/shreyas-wankhede</p>
               </div>
             </a>
-            <a href="#" className="direct-link-card">
+            <a href="https://drive.google.com/file/d/1d9Ae7e39Bf1gIf1g2691B3hti5iZmrxW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="direct-link-card">
               <div className="link-icon-wrapper">
                 <FileText className="link-icon" size={24} />
               </div>
               <div className="link-content">
                 <h3 className="link-title">Resume</h3>
-                <p className="link-value">Download Resume</p>
+                <p className="link-value">View Resume</p>
               </div>
             </a>
           </div>
