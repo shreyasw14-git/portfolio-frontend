@@ -39,7 +39,7 @@ const Home = () => {
               <button className="btn-secondary" onClick={() => scrollToSection('contact')}>
                 Get in Touch
               </button>
-              <a href="#" className="btn-outline">
+              <a href="https://drive.google.com/file/d/1d9Ae7e39Bf1gIf1g2691B3hti5iZmrxW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-outline">
                 <Download size={18} /> View Resume
               </a>
             </div>
