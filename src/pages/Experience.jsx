@@ -31,10 +31,10 @@ const featuredExperience = [
     role: "Technical Process Intern",
     dates: "2023",
     bullets: [
-      "Supported design and manufacturing activities across Bindwel (book-binding machines) and Stelda (packaging solutions).",
-      "Developed process-sheet documentation in AutoCAD to standardize production workflows.",
-      "Designed the Random Box Erector in SolidWorks, a packaging system handling 14 box sizes, as the key project highlight.",
-      "Collaborated with cross-functional teams for fabrication trials and timing studies."
+      "Supported design and manufacturing activities across Bindwel and Stelda.",
+      "Developed process-sheet documentation in AutoCAD to standardize workflows.",
+      "Designed the Random Box Erector in SolidWorks handling 14 box sizes.",
+      "Collaborated with fabrication teams for trials and timing studies."
     ],
     tools: "SolidWorks | AutoCAD | Fabrication Shop Tools | Process Optimization",
     keyResult: "Reduced setup time by 25% and improved production efficiency by ~20%.",
@@ -54,9 +54,9 @@ const otherExperience = [
     role: "Design Intern",
     dates: "2022",
     bullets: [
-      "Modeled engine and drivetrain parts in CATIA and UG NX; prepared manufacturing drawings and BOMs.",
-      "Performed tolerance checks and design revisions for machining fit accuracy.",
-      "Coordinated with shop floor teams to verify design feasibility."
+      "Modeled engine and drivetrain parts in CATIA and UG NX.",
+      "Performed tolerance checks and design revisions.",
+      "Coordinated with shop floor teams for feasibility checks."
     ],
     tools: "CATIA | UG NX | GD&T"
   },
@@ -67,9 +67,9 @@ const otherExperience = [
     role: "Mechanical R&D Lead; Aerodynamics Engineer",
     dates: "2020–2021",
     bullets: [
-      "Led mechanical subsystem design covering structures, levitation, and braking modules.",
-      "Optimized Al-6061 components for weight and stiffness; validated aero performance via CFD.",
-      "Directed integration between aero shell and chassis assemblies to improve pod efficiency."
+      "Led mechanical subsystem design including structures and braking modules.",
+      "Optimized Al-6061 parts and validated aero performance via CFD.",
+      "Directed integration of aero shell and chassis assemblies."
     ],
     tools: "SolidWorks | ANSYS | CFD | Test Planning"
   }
@@ -78,7 +78,6 @@ const otherExperience = [
 const Experience = () => {
   return (
     <div className="experience-page">
-      {/* Header Section */}
       <section className="experience-header">
         <h1 className="experience-page-title">Experience</h1>
         <p className="experience-intro">
@@ -86,15 +85,10 @@ const Experience = () => {
         </p>
       </section>
 
-      {/* Featured Experience Section */}
       <section className="featured-experience-section">
         <h2 className="experience-section-title">Featured Experience</h2>
 
-        {/* changed this div to force vertical stacking */}
-        <div
-          className="featured-experience-grid"
-          style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
-        >
+        <div className="featured-experience-grid">
           {featuredExperience.map((exp) => (
             <div key={exp.id} className="featured-experience-card-with-image">
               <div className="experience-content-main">
@@ -102,29 +96,29 @@ const Experience = () => {
                   <div>
                     <h3 className="experience-role">{exp.role}</h3>
                     <p className="experience-organization">{exp.organization}</p>
-                    <p className="experience-location">
-                      {exp.location} | {exp.dates}
-                    </p>
+                    <p className="experience-location">{exp.location} | {exp.dates}</p>
                   </div>
                 </div>
+
                 <ul className="experience-bullets">
                   {exp.bullets.map((bullet, idx) => (
                     <li key={idx}>{bullet}</li>
                   ))}
                 </ul>
+
                 <div className="experience-meta">
                   <div className="meta-item">
                     <span className="meta-label">Tools:</span>
                     <span className="meta-value">{exp.tools}</span>
                   </div>
+
                   <div className="meta-item">
-                    <span className="meta-label">
-                      Key Result{exp.id === 2 ? 's' : ''}:
-                    </span>
+                    <span className="meta-label">Key Result:</span>
                     <span className="meta-value">{exp.keyResult}</span>
                   </div>
                 </div>
-                {exp.links && exp.links.length > 0 && (
+
+                {exp.links && (
                   <div className="experience-links">
                     {exp.links.map((link, index) => (
                       <a
@@ -136,13 +130,14 @@ const Experience = () => {
                       >
                         <span className="link-icon">
                           {link.type === 'documentation' ? '📝' : '🎞'}
-                        </span>{' '}
+                        </span>
                         {link.label}
                       </a>
                     ))}
                   </div>
                 )}
               </div>
+
               <div className="experience-image-wrapper">
                 <ImageSlideshow
                   images={imageConfig.experience[exp.imageKey]}
@@ -156,7 +151,6 @@ const Experience = () => {
         </div>
       </section>
 
-      {/* Other Experience Section */}
       <section className="other-experience-section">
         <h2 className="experience-section-title">Other Experience</h2>
         <div className="other-experience-grid">
@@ -168,19 +162,17 @@ const Experience = () => {
                 </div>
                 <div className="experience-title-block">
                   <h3 className="other-experience-role">{exp.role}</h3>
-                  <p className="other-experience-organization">
-                    {exp.organization}
-                  </p>
-                  <span className="other-experience-dates">
-                    {exp.location} | {exp.dates}
-                  </span>
+                  <p className="other-experience-organization">{exp.organization}</p>
+                  <span className="other-experience-dates">{exp.location} | {exp.dates}</span>
                 </div>
               </div>
+
               <ul className="other-experience-bullets">
                 {exp.bullets.map((bullet, idx) => (
                   <li key={idx}>{bullet}</li>
                 ))}
               </ul>
+
               <div className="other-experience-tools">
                 <span className="tools-label">Tools:</span>
                 <span className="tools-value">{exp.tools}</span>
