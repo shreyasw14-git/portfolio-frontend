@@ -89,7 +89,12 @@ const Experience = () => {
       {/* Featured Experience Section */}
       <section className="featured-experience-section">
         <h2 className="experience-section-title">Featured Experience</h2>
-        <div className="featured-experience-grid">
+
+        {/* changed this div to force vertical stacking */}
+        <div
+          className="featured-experience-grid"
+          style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
+        >
           {featuredExperience.map((exp) => (
             <div key={exp.id} className="featured-experience-card-with-image">
               <div className="experience-content-main">
@@ -97,7 +102,9 @@ const Experience = () => {
                   <div>
                     <h3 className="experience-role">{exp.role}</h3>
                     <p className="experience-organization">{exp.organization}</p>
-                    <p className="experience-location">{exp.location} | {exp.dates}</p>
+                    <p className="experience-location">
+                      {exp.location} | {exp.dates}
+                    </p>
                   </div>
                 </div>
                 <ul className="experience-bullets">
@@ -111,29 +118,34 @@ const Experience = () => {
                     <span className="meta-value">{exp.tools}</span>
                   </div>
                   <div className="meta-item">
-                    <span className="meta-label">Key Result{exp.id === 2 ? 's' : ''}:</span>
+                    <span className="meta-label">
+                      Key Result{exp.id === 2 ? 's' : ''}:
+                    </span>
                     <span className="meta-value">{exp.keyResult}</span>
                   </div>
                 </div>
                 {exp.links && exp.links.length > 0 && (
                   <div className="experience-links">
                     {exp.links.map((link, index) => (
-                      <a 
+                      <a
                         key={index}
-                        href={link.url} 
+                        href={link.url}
                         className="experience-link-btn"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <span className="link-icon">{link.type === 'documentation' ? '📝' : '🎞'}</span> {link.label}
+                        <span className="link-icon">
+                          {link.type === 'documentation' ? '📝' : '🎞'}
+                        </span>{' '}
+                        {link.label}
                       </a>
                     ))}
                   </div>
                 )}
               </div>
               <div className="experience-image-wrapper">
-                <ImageSlideshow 
-                  images={imageConfig.experience[exp.imageKey]} 
+                <ImageSlideshow
+                  images={imageConfig.experience[exp.imageKey]}
                   height="320px"
                   borderRadius="10px"
                   objectFit="contain"
@@ -156,8 +168,12 @@ const Experience = () => {
                 </div>
                 <div className="experience-title-block">
                   <h3 className="other-experience-role">{exp.role}</h3>
-                  <p className="other-experience-organization">{exp.organization}</p>
-                  <span className="other-experience-dates">{exp.location} | {exp.dates}</span>
+                  <p className="other-experience-organization">
+                    {exp.organization}
+                  </p>
+                  <span className="other-experience-dates">
+                    {exp.location} | {exp.dates}
+                  </span>
                 </div>
               </div>
               <ul className="other-experience-bullets">
