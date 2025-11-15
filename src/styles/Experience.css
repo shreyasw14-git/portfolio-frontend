@@ -45,9 +45,10 @@
   margin-bottom: 6rem;
 }
 
+/* UPDATED: stack featured experience cards vertically */
 .featured-experience-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 2.5rem;
 }
 
