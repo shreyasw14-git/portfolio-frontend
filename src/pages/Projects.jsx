@@ -218,7 +218,6 @@ const Projects = () => {
   
   const filterCategories = ['All', 'Design', 'Manufacturing', 'R&D', 'Testing'];
   
-  // Filter projects based on active category
   const filteredFeaturedProjects = activeFilter === 'All' 
     ? featuredProjects 
     : featuredProjects.filter(project => project.filterCategory === activeFilter);
@@ -256,33 +255,79 @@ const Projects = () => {
           <h2 className="projects-section-title">Featured Projects</h2>
           <div className="featured-projects-grid">
             {filteredFeaturedProjects.map((project) => (
-            <div key={project.id} className="featured-project-card">
-              <div className="featured-project-image">
-                <ImageSlideshow 
-                  images={imageConfig.projects[project.imageKey]} 
-                  height="320px"
-                  borderRadius="12px 12px 0 0"
-                  objectFit="contain"
-                />
-                <div className="featured-project-overlay">
-                  <span className="project-category-badge">{project.category}</span>
+              <div key={project.id} className="featured-project-card">
+                <div className="featured-project-image">
+                  <ImageSlideshow 
+                    images={imageConfig.projects[project.imageKey]} 
+                    height="320px"
+                    borderRadius="12px 12px 0 0"
+                    objectFit="contain"
+                  />
+                  <div className="featured-project-overlay">
+                    <span className="project-category-badge">{project.category}</span>
+                  </div>
+                </div>
+                <div className="featured-project-content">
+                  <h3 className="featured-project-title">{project.title}</h3>
+                  <p className="featured-project-description">{project.description}</p>
+                  <div className="project-meta">
+                    <div className="meta-item">
+                      <span className="meta-label">Technical Focus:</span>
+                      <span className="meta-value">{project.technicalFocus}</span>
+                    </div>
+                    <div className="meta-item">
+                      <span className="meta-label">Tools Used:</span>
+                      <span className="meta-value">{project.tools}</span>
+                    </div>
+                    <div className="meta-item">
+                      <span className="meta-label">Key Results:</span>
+                      <span className="meta-value">{project.impact}</span>
+                    </div>
+                  </div>
+                  {project.links && project.links.length > 0 && (
+                    <div className="project-links">
+                      {project.links.map((link, index) => (
+                        <a 
+                          key={index} 
+                          href={link.url} 
+                          className="project-link-btn"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="link-icon">
+                            {link.type === 'article' ? '📰' : link.type === 'report' ? '📄' : '🎞'}
+                          </span> 
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="featured-project-content">
-                <h3 className="featured-project-title">{project.title}</h3>
-                <p className="featured-project-description">{project.description}</p>
-                <div className="project-meta">
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Other Projects Section */}
+      {filteredOtherProjects.length > 0 && (
+        <section className="other-projects-section">
+          <h2 className="projects-section-title">Other Projects</h2>
+          <div className="other-projects-grid">
+            {filteredOtherProjects.map((project) => (
+              <div key={project.id} className="other-project-card">
+                <div className="other-project-header">
+                  <h3 className="other-project-title">{project.title}</h3>
+                </div>
+                <p className="other-project-description">{project.description}</p>
+                <div className="other-project-meta">
                   <div className="meta-item">
-                    <span className="meta-label">Technical Focus:</span>
-                    <span className="meta-value">{project.technicalFocus}</span>
-                  </div>
-                  <div className="meta-item">
-                    <span className="meta-label">Tools Used:</span>
+                    <span className="meta-label">Tools:</span>
                     <span className="meta-value">{project.tools}</span>
                   </div>
-                  <div className="meta-item">
-                    <span className="meta-label">Key Results:</span>
-                    <span className="meta-value">{project.impact}</span>
+                  <div className="meta-item highlight">
+                    <span className="meta-label">Key Outcome:</span>
+                    <span className="meta-value">{project.highlight}</span>
                   </div>
                 </div>
                 {project.links && project.links.length > 0 && (
@@ -295,58 +340,18 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <span className="link-icon">{link.type === 'article' ? '📰' : link.type === 'report' ? '📄' : '🎞'}</span> {link.label}
+                        <span className="link-icon">
+                          {link.type === 'report' ? '📄' : '🎞'}
+                        </span> 
+                        {link.label}
                       </a>
                     ))}
                   </div>
                 )}
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      )}
-
-      {/* Other Projects Section */}
-      {filteredOtherProjects.length > 0 && (
-        <section className="other-projects-section">
-          <h2 className="projects-section-title">Other Projects</h2>
-          <div className="other-projects-grid">
-            {filteredOtherProjects.map((project) => (
-            <div key={project.id} className="other-project-card">
-              <div className="other-project-header">
-                <h3 className="other-project-title">{project.title}</h3>
-              </div>
-              <p className="other-project-description">{project.description}</p>
-              <div className="other-project-meta">
-                <div className="meta-item">
-                  <span className="meta-label">Tools:</span>
-                  <span className="meta-value">{project.tools}</span>
-                </div>
-                <div className="meta-item highlight">
-                  <span className="meta-label">Key Outcome:</span>
-                  <span className="meta-value">{project.highlight}</span>
-                </div>
-              </div>
-              {project.links && project.links.length > 0 && (
-                <div className="project-links">
-                  {project.links.map((link, index) => (
-                    <a 
-                      key={index} 
-                      href={link.url} 
-                      className="project-link-btn"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="link-icon">{link.type === 'report' ? '📄' : '🎞'}</span> {link.label}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
       )}
     </div>
   );
