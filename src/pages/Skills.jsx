@@ -50,20 +50,20 @@ const technicalSkills = [
 ];
 
 const softwareTools = [
-  { name: 'SolidWorks', category: 'CAD' },
-  { name: 'AutoCAD', category: 'CAD' },
-  { name: 'CATIA', category: 'CAD' },
-  { name: 'UG NX', category: 'CAD' },
-  { name: 'ANSYS', category: 'Simulation & Analysis' },
-  { name: 'ABAQUS', category: 'Simulation & Analysis' },
-  { name: 'COMSOL', category: 'Simulation & Analysis' },
-  { name: 'Minitab', category: 'Simulation & Analysis' },
-  { name: 'MATLAB', category: 'Programming & Modeling' },
-  { name: 'Python', category: 'Programming & Modeling' },
-  { name: 'Arduino', category: 'Programming & Modeling' },
-  { name: 'MS Office Suite', category: 'Productivity & Documentation' },
-  { name: 'Notion', category: 'Productivity & Documentation' },
-  { name: 'Google Workspace', category: 'Productivity & Documentation' }
+  { name: 'SolidWorks', category: 'CAD', logo: '/logos/logo_solidworks.png' },
+  { name: 'AutoCAD', category: 'CAD', logo: '/logos/logo_autocad.png' },
+  { name: 'CATIA', category: 'CAD', logo: '/logos/logo_catia.png' },
+  { name: 'UG NX', category: 'CAD', logo: '/logos/logo_ugnx.png' },
+  { name: 'ANSYS', category: 'Simulation & Analysis', logo: '/logos/logo_ansys.png' },
+  { name: 'ABAQUS', category: 'Simulation & Analysis', logo: '/logos/logo_abaqus.png' },
+  { name: 'COMSOL', category: 'Simulation & Analysis', logo: '/logos/logo_comsol.png' },
+  { name: 'Minitab', category: 'Simulation & Analysis', logo: '/logos/logo_minitab.png' },
+  { name: 'MATLAB', category: 'Programming & Modeling', logo: '/logos/logo_matlab.png' },
+  { name: 'Python', category: 'Programming & Modeling', logo: '/logos/logo_python.png' },
+  { name: 'Arduino', category: 'Programming & Modeling', logo: '/logos/logo_arduino.png' },
+  { name: 'MS Office Suite', category: 'Productivity & Documentation', logo: '/logos/logo_msoffice.png' },
+  { name: 'Notion', category: 'Productivity & Documentation', logo: '/logos/logo_notion.png' },
+  { name: 'Google Workspace', category: 'Productivity & Documentation', logo: '/logos/logo_google.png' }
 ];
 
 const certifications = [
@@ -145,11 +145,16 @@ const Skills = () => {
       {/* Software Proficiency Section */}
       <section className="software-section">
         <h2 className="skills-section-title">Software Proficiency</h2>
-        <div className="software-grid">
+        <div className="software-logo-grid">
           {softwareTools.map((tool, idx) => (
-            <div key={idx} className="software-badge">
-              <span className="software-name">{tool.name}</span>
-              <span className="software-category">{tool.category}</span>
+            <div key={idx} className="software-logo-card">
+              <img 
+                src={tool.logo} 
+                alt={`${tool.name} logo`}
+                className="software-logo"
+              />
+              <h4 className="software-name">{tool.name}</h4>
+              <p className="software-category-label">{tool.category}</p>
             </div>
           ))}
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowRight, Download, Mail, Linkedin, Calendar, ExternalLink } from 'lucide-react';
+import { ArrowRight, Download, Mail, Linkedin, Calendar, Briefcase, Wrench, FlaskConical, Code, Hammer, TestTube, GraduationCap } from 'lucide-react';
 import CircularSlideshow from '../components/CircularSlideshow';
 import ImageSlideshow from '../components/ImageSlideshow';
 import { imageConfig } from '../imageConfig';
@@ -29,17 +29,15 @@ const Home = () => {
           <div className={`hero-text ${isVisible ? 'fade-in' : ''}`}>
             <h1 className="hero-title">Shreyas Wankhede</h1>
             <p className="hero-role">Advanced Design and Manufacturing</p>
+            <p className="hero-academic">MEng, University of Toronto • BTech, IIT Bombay</p>
             <p className="hero-description">
               Designing, testing, and optimizing advanced materials, manufacturing systems, and product prototypes for high-performance engineering applications.
             </p>
             <div className="hero-actions">
-              <button className="btn-primary" onClick={() => scrollToSection('impact')}>
-                View Highlights
-              </button>
               <button className="btn-secondary" onClick={() => scrollToSection('contact')}>
                 Get in Touch
               </button>
-              <a href="https://drive.google.com/file/d/1d9Ae7e39Bf1gIf1g2691B3hti5iZmrxW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-outline">
+              <a href="https://docs.google.com/document/d/1QQ7zEFBypIEtSoi6EnlHqugsrhoHP3zu/edit?usp=sharing&ouid=110245284201745936676&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="btn-outline">
                 <Download size={18} /> View Resume
               </a>
             </div>
@@ -54,259 +52,193 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Impact Highlights */}
-      <section className="impact-section" id="impact">
+      {/* Featured Experience */}
+      <section className="featured-experience-section" id="featured-experience">
         <div className="section-header">
-          <h2 className="section-title">Impact Highlights</h2>
-          <p className="section-subtitle">A summary of engineering results and measurable outcomes.</p>
+          <h2 className="section-title">Featured Experience</h2>
+          <p className="section-subtitle">A quick look at my most relevant hands-on engineering roles.</p>
         </div>
-        <div className="impact-grid">
-          <div className="impact-card">
-            <span className="impact-icon">⚙️</span>
-            <div className="impact-metric">25%</div>
-            <p className="impact-text">Faster production workflow achieved through CAD-driven design and standardized processes.</p>
-          </div>
-          <div className="impact-card">
-            <span className="impact-icon">🧪</span>
-            <div className="impact-metric">95%</div>
-            <p className="impact-text">Precision ping-pong launcher designed and tested with ±0.1 mm tolerance validation.</p>
-          </div>
-          <div className="impact-card">
-            <span className="impact-icon">🧩</span>
-            <div className="impact-metric">86%</div>
-            <p className="impact-text">Achieved 86% target adhesion strength and doubled mechanical durability in multilayer composites.</p>
-          </div>
-          <div className="impact-card">
-            <span className="impact-icon">⚡</span>
-            <div className="impact-metric">4.5V</div>
-            <p className="impact-text">Developed motion-based energy harvesting system demonstrating applied mechatronics and testing capability.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Work Experience Snapshot */}
-      <section className="experience-snapshot-section" id="experience-snapshot">
-        <div className="section-header">
-          <h2 className="section-title">Experience</h2>
-          <p className="section-subtitle">Hands-on research and process improvement through industrial and academic roles.</p>
-        </div>
-        <div className="experience-snapshot-grid">
-          <div className="experience-snapshot-card">
-            <div className="experience-snapshot-image">
+        <div className="featured-experience-grid">
+          <div className="featured-experience-card">
+            <div className="featured-experience-image">
               <ImageSlideshow 
                 images={imageConfig.experience.uoftResearch} 
-                height="280px"
+                height="240px"
                 borderRadius="10px"
                 objectFit="contain"
               />
             </div>
-            <div className="experience-snapshot-content">
-              <h3 className="experience-snapshot-title">Research Assistant – University of Toronto</h3>
-              <p className="experience-snapshot-text">
-                Enhanced tie-layer performance in multilayer composites through adhesion, rheology, and thermal-mechanical testing.
+            <div className="featured-experience-content">
+              <h3 className="featured-experience-title">Research Assistant – Smart Polymers & Composites Lab</h3>
+              <p className="featured-experience-location">University of Toronto</p>
+              <p className="featured-experience-text">
+                Developed and tested multilayer polymer composites for extreme environments, achieving 86 percent of target adhesion strength and doubling durability benchmarks under elevated temperature testing.
               </p>
-              <Link to="/experience" className="experience-snapshot-link">
-                View Experience <ArrowRight size={16} />
+              <Link to="/experience" className="featured-experience-link">
+                View full experience <ArrowRight size={16} />
               </Link>
             </div>
           </div>
-          <div className="experience-snapshot-card alternate">
-            <div className="experience-snapshot-image">
+          <div className="featured-experience-card">
+            <div className="featured-experience-image">
               <ImageSlideshow 
-                images={imageConfig.experience.bindwelStelda.slice(0, 5)} 
-                height="280px"
+                images={imageConfig.experience.bindwelStelda} 
+                height="240px"
                 borderRadius="10px"
                 objectFit="contain"
               />
             </div>
-            <div className="experience-snapshot-content">
-              <h3 className="experience-snapshot-title">Technical Process Intern – Bindwel & Stelda</h3>
-              <p className="experience-snapshot-text">
-                Designed adaptive packaging machine for 14 box sizes and optimized workflow efficiency by 25%.
+            <div className="featured-experience-content">
+              <h3 className="featured-experience-title">Technical Process Intern – Bindwel & Stelda</h3>
+              <p className="featured-experience-location">Impel Services, Bangalore</p>
+              <p className="featured-experience-text">
+                Supported design and manufacturing of packaging equipment, including a custom machine that can handle 14 box sizes, while improving workflow efficiency on the shop floor.
               </p>
-              <Link to="/experience" className="experience-snapshot-link">
-                View Experience <ArrowRight size={16} />
+              <Link to="/experience" className="featured-experience-link">
+                View full experience <ArrowRight size={16} />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Research Spotlight */}
-      <section className="research-spotlight-section" id="research-spotlight">
+      {/* Featured Projects */}
+      <section className="featured-projects-section" id="featured-projects">
         <div className="section-header">
-          <h2 className="section-title">Research Spotlight</h2>
-          <p className="section-subtitle">Advancing polymer composites and micro/nano fabrication through experimentation and analysis.</p>
+          <h2 className="section-title">Featured Projects</h2>
+          <p className="section-subtitle">Selected design, testing, and manufacturing projects.</p>
         </div>
-        <div className="research-spotlight-grid">
-          <div className="research-spotlight-card">
-            <div className="research-spotlight-image">
-              <img src="/images/research/grad_research.png" alt="Graduate Research - Composite testing" />
-            </div>
-            <div className="research-spotlight-content">
-              <h3 className="research-spotlight-title">Graduate Research</h3>
-              <p className="research-spotlight-text">
-                Developed multilayer thermoplastic composites with 86% adhesion performance and doubled durability under elevated temperatures.
-              </p>
-              <Link to="/research" className="research-spotlight-link">
-                Read More <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-          <div className="research-spotlight-card">
-            <div className="research-spotlight-image">
-              <img src="/images/research/undergrad_research.png" alt="Undergraduate Study - Two-Photon Polymerization" />
-            </div>
-            <div className="research-spotlight-content">
-              <h3 className="research-spotlight-title">Undergraduate Study</h3>
-              <p className="research-spotlight-text">
-                Explored Two-Photon Polymerization for sub-100 nm precision in biomedical and microrobotic applications.
-              </p>
-              <Link to="/research" className="research-spotlight-link">
-                Read More <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Selected Work */}
-      <section className="selected-work-section" id="selected-work">
-        <div className="section-header">
-          <h2 className="section-title">Selected Projects</h2>
-          <p className="section-subtitle">Designs, prototypes, and experiments reflecting diverse technical expertise.</p>
-        </div>
-        <div className="selected-work-grid">
-          <div className="selected-work-card">
-            <div className="selected-work-image">
+        <div className="featured-projects-grid">
+          <div className="featured-project-card">
+            <div className="featured-project-image">
               <ImageSlideshow 
                 images={imageConfig.projects.ballLauncher} 
-                height="220px"
+                height="200px"
                 borderRadius="10px"
                 objectFit="contain"
               />
             </div>
-            <div className="selected-work-content">
-              <h3 className="selected-work-title">Range-Controlled Ball Launcher</h3>
-              <p className="selected-work-text">
-                Precision spring-actuated launcher achieving 100% range accuracy with ±0.1 mm tolerance validation.
+            <div className="featured-project-content">
+              <h3 className="featured-project-title">Range Controlled Ball Launcher</h3>
+              <p className="featured-project-text">
+                Designed and prototyped a ping-pong ball launcher with 95 percent range accuracy through DOE, DFMEA, and tolerance stack-up analysis.
               </p>
-              <Link to="/projects" className="selected-work-link">
-                View Project <ArrowRight size={16} />
+              <Link to="/projects" className="featured-project-link">
+                View project <ArrowRight size={16} />
               </Link>
             </div>
           </div>
-          <div className="selected-work-card">
-            <div className="selected-work-image">
+          <div className="featured-project-card">
+            <div className="featured-project-image">
               <ImageSlideshow 
                 images={imageConfig.projects.energyHarvesting} 
-                height="220px"
+                height="200px"
                 borderRadius="10px"
                 objectFit="contain"
               />
             </div>
-            <div className="selected-work-content">
-              <h3 className="selected-work-title">Energy-Harvesting Gym Equipment</h3>
-              <p className="selected-work-text">
-                Motion-to-electricity conversion system generating 4.5V per dynamo with >20% efficiency improvement.
+            <div className="featured-project-content">
+              <h3 className="featured-project-title">Energy Harvesting Gym Equipment</h3>
+              <p className="featured-project-text">
+                Designed motion-based energy harvesting systems that convert workout motion into electrical power, demonstrating applied mechatronics and testing capability.
               </p>
-              <Link to="/projects" className="selected-work-link">
-                View Project <ArrowRight size={16} />
+              <Link to="/projects" className="featured-project-link">
+                View project <ArrowRight size={16} />
               </Link>
             </div>
           </div>
-          <div className="selected-work-card">
-            <div className="selected-work-image">
+          <div className="featured-project-card">
+            <div className="featured-project-image">
               <ImageSlideshow 
                 images={imageConfig.projects.scapularMotion} 
-                height="220px"
+                height="200px"
                 borderRadius="10px"
                 objectFit="contain"
               />
             </div>
-            <div className="selected-work-content">
-              <h3 className="selected-work-title">Scapular Motion Tracking Device</h3>
-              <p className="selected-work-text">
-                Wearable IMU and computer vision system achieving 0.95 mAP accuracy for biomechanics research.
+            <div className="featured-project-content">
+              <h3 className="featured-project-title">Scapular Motion Tracking Device</h3>
+              <p className="featured-project-text">
+                Developed a wearable device concept for capturing shoulder blade motion for clinical and sports analysis.
               </p>
-              <Link to="/projects" className="selected-work-link">
-                View Project <ArrowRight size={16} />
+              <Link to="/projects" className="featured-project-link">
+                View project <ArrowRight size={16} />
               </Link>
             </div>
           </div>
-        </div>
-        <div className="section-cta">
-          <button className="btn-cta" onClick={() => navigate('/projects')}>
-            See All Projects <ArrowRight size={18} />
-          </button>
         </div>
       </section>
 
-      {/* Skills & Tools */}
-      <section className="skills-section" id="skills">
+      {/* Research Highlights */}
+      <section className="research-highlights-section" id="research-highlights">
         <div className="section-header">
-          <h2 className="section-title">Skills & Tools Overview</h2>
-          <p className="section-subtitle">Technical and software expertise applied across research and design.</p>
+          <h2 className="section-title">Research Highlights</h2>
         </div>
-        <div className="skills-content">
-          <div className="skills-row">
-            <span className="skills-category">Core Skills:</span>
-            <div className="skills-badges">
-              <span className="skill-badge">Advanced Composites</span>
-              <span className="skill-badge">DfAM</span>
-              <span className="skill-badge">GD&T</span>
-              <span className="skill-badge">Tolerance Analysis</span>
-              <span className="skill-badge">CFD</span>
+        <div className="research-highlights-grid">
+          <div className="research-highlight-card">
+            <div className="research-highlight-image">
+              <img src="/images/research/grad_research.png" alt="Graduate Research - Composite testing" />
+            </div>
+            <div className="research-highlight-content">
+              <h3 className="research-highlight-title">Graduate Research</h3>
+              <p className="research-highlight-text">
+                Developed multilayer thermoplastic composites with 86% adhesion performance and doubled durability under elevated temperatures.
+              </p>
+              <Link to="/research" className="research-highlight-link">
+                Read More <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
-          <div className="skills-row">
-            <span className="skills-category">Software:</span>
-            <div className="skills-badges">
-              <span className="skill-badge">SolidWorks</span>
-              <span className="skill-badge">ANSYS</span>
-              <span className="skill-badge">CATIA</span>
-              <span className="skill-badge">Minitab</span>
-              <span className="skill-badge">Python</span>
+          <div className="research-highlight-card">
+            <div className="research-highlight-image">
+              <img src="/images/research/undergrad_research.png" alt="Undergraduate Study - Two-Photon Polymerization" />
             </div>
+            <div className="research-highlight-content">
+              <h3 className="research-highlight-title">Undergraduate Study</h3>
+              <p className="research-highlight-text">
+                Explored Two-Photon Polymerization for sub-100 nm precision in biomedical and microrobotic applications.
+              </p>
+              <Link to="/research" className="research-highlight-link">
+                Read More <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Snapshot */}
+      <section className="skills-snapshot-section" id="skills-snapshot">
+        <div className="section-header">
+          <h2 className="section-title">Skills Snapshot</h2>
+          <p className="section-subtitle">A quick view of my core technical strengths.</p>
+        </div>
+        <div className="skills-snapshot-content">
+          <div className="skills-snapshot-row">
+            <span className="skill-pill">
+              <Hammer size={16} /> Advanced composites and polymers
+            </span>
+            <span className="skill-pill">
+              <Code size={16} /> Product design and CAD (SolidWorks, AutoCAD, CATIA)
+            </span>
+            <span className="skill-pill">
+              <Wrench size={16} /> Manufacturing and process optimization
+            </span>
+          </div>
+          <div className="skills-snapshot-row">
+            <span className="skill-pill">
+              <TestTube size={16} /> FEA and CFD analysis
+            </span>
+            <span className="skill-pill">
+              <Briefcase size={16} /> GD&T and tolerance stack-up
+            </span>
+            <span className="skill-pill">
+              <FlaskConical size={16} /> Testing, data analysis, and DOE
+            </span>
           </div>
         </div>
         <div className="section-cta">
           <button className="btn-cta-secondary" onClick={() => navigate('/skills')}>
             View Full Skillset <ArrowRight size={18} />
-          </button>
-        </div>
-      </section>
-
-      {/* Education & Certifications */}
-      <section className="education-section" id="education">
-        <div className="section-header">
-          <h2 className="section-title">Education & Certifications</h2>
-        </div>
-        <div className="education-timeline">
-          <div className="education-item">
-            <span className="education-icon">🎓</span>
-            <div className="education-content">
-              <h3 className="education-degree">MEng – University of Toronto</h3>
-              <p className="education-focus">Mechanical and Industrial Engineering (Advanced Manufacturing & Composites)</p>
-            </div>
-          </div>
-          <div className="education-item">
-            <span className="education-icon">🎓</span>
-            <div className="education-content">
-              <h3 className="education-degree">BTech – IIT Bombay</h3>
-              <p className="education-focus">Mechanical Engineering</p>
-            </div>
-          </div>
-          <div className="education-item">
-            <span className="education-icon">📜</span>
-            <div className="education-content">
-              <p className="education-certs">Certified SolidWorks Associate (CSWA) | ASME GD&T | Lean Six Sigma Foundations</p>
-            </div>
-          </div>
-        </div>
-        <div className="section-cta">
-          <button className="btn-cta-secondary" onClick={() => navigate('/courses')}>
-            View Courses <ArrowRight size={18} />
           </button>
         </div>
       </section>
@@ -318,13 +250,10 @@ const Home = () => {
           <p className="contact-subtitle">Connect for opportunities in product development, manufacturing engineering, or R&D.</p>
           <div className="contact-buttons">
             <a href="mailto:shreyas.ca14@gmail.com" className="contact-btn">
-              <Mail size={20} /> Email
+              <Mail size={20} /> Get In Touch
             </a>
             <a href="https://www.linkedin.com/in/shreyas-wankhede/" target="_blank" rel="noopener noreferrer" className="contact-btn">
-              <Linkedin size={20} /> LinkedIn
-            </a>
-            <a href="#" className="contact-btn">
-              <Download size={20} /> View Resume
+              <Linkedin size={20} /> Connect on LinkedIn
             </a>
             <a href="https://calendly.com/shreyas-ca14/30min" target="_blank" rel="noopener noreferrer" className="contact-btn">
               <Calendar size={20} /> Book 1-on-1 Meeting

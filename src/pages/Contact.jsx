@@ -110,7 +110,7 @@ const Contact = () => {
                 <p className="link-value">linkedin.com/in/shreyas-wankhede</p>
               </div>
             </a>
-            <a href="https://drive.google.com/file/d/1d9Ae7e39Bf1gIf1g2691B3hti5iZmrxW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="direct-link-card">
+            <a href="https://docs.google.com/document/d/1QQ7zEFBypIEtSoi6EnlHqugsrhoHP3zu/edit?usp=sharing&ouid=110245284201745936676&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="direct-link-card">
               <div className="link-icon-wrapper">
                 <FileText className="link-icon" size={24} />
               </div>

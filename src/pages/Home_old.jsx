@@ -43,7 +43,7 @@ const Home = () => {
                 <Mail size={18} /> Get In Touch
               </button>
               <button className="btn-outline">
-                <Download size={18} /> View Resume
+                <Download size={18} /> Download Resume
               </button>
             </div>
           </div>

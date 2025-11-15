@@ -149,6 +149,11 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  transition: all var(--transition-normal);
+}
+
+.featured-project-card:hover .project-category-badge {
+  background-color: var(--accent-secondary);
 }
 
 .featured-project-content {

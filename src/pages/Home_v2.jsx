@@ -173,8 +173,8 @@ const Home = () => {
       {/* Quick Links Strip */}
       <section className="quick-links-section">
         <div className="quick-links-container">
-          <a href="https://drive.google.com/file/d/1d9Ae7e39Bf1gIf1g2691B3hti5iZmrxW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="quick-link-btn">
-            <Download size={18} /> View Resume
+          <a href="#" className="quick-link-btn">
+            <Download size={18} /> Download Resume
           </a>
           <a 
             href="https://www.linkedin.com/in/shreyas-wankhede/" 

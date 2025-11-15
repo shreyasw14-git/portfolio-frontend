@@ -33,9 +33,9 @@ const About = () => {
               <p>I hold a <span className="highlight-text">B.Tech in Mechanical Engineering</span> from <span className="highlight-text">IIT Bombay</span>, where I built a deep foundation in CAD design, materials, and experimental analysis, supported by hands-on experience through technical internships and research projects.</p>
               <p>My background bridges materials engineering, design simulation, and process optimization, making me particularly drawn to roles in <span className="highlight-text">Product Development</span>, <span className="highlight-text">Manufacturing Engineering</span>, and <span className="highlight-text">R&D</span>.</p>
             </div>
-            <button className="btn-download-resume">
+            <a href="https://docs.google.com/document/d/1QQ7zEFBypIEtSoi6EnlHqugsrhoHP3zu/edit?usp=sharing&ouid=110245284201745936676&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="btn-download-resume">
               <Download size={18} /> View Resume
-            </button>
+            </a>
           </div>
         </div>
       </section>

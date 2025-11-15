@@ -9,6 +9,8 @@
   --color-accent-primary: #2e73ff;
   --color-accent-hover: #1a5ce6;
   --color-accent-light: rgba(46, 115, 255, 0.1);
+  --accent-secondary: #00B894;
+  --accent-secondary-light: rgba(0, 184, 148, 0.1);
   --color-text-primary: #333333;
   --color-text-secondary: #666666;
   --color-text-muted: #999999;
