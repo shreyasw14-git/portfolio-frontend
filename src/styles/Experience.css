@@ -45,11 +45,16 @@
   margin-bottom: 6rem;
 }
 
-/* FORCE FEATURED CARDS TO STACK TOP-TO-BOTTOM */
+/* This grid class stays, but is no longer used after JSX change */
 .featured-experience-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2.5rem;
+}
+
+/* Add vertical spacing between stacked featured cards */
+.featured-experience-card-with-image + .featured-experience-card-with-image {
+  margin-top: 2.5rem;
 }
 
 .featured-experience-card-with-image {
