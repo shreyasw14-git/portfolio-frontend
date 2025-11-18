@@ -254,7 +254,7 @@ const Projects = () => {
       {filteredFeaturedProjects.length > 0 && (
         <section className="featured-projects-section">
           <h2 className="projects-section-title">Featured Projects</h2>
-          <div className="featured-projects-grid">
+          <div className="featured-projects-single-column">
             {filteredFeaturedProjects.map((project) => (
             <div key={project.id} className="featured-project-card">
               <div className="featured-project-image">
