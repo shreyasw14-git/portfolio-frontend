@@ -69,18 +69,24 @@ const softwareTools = [
 const certifications = [
   {
     id: 1,
-    name: 'Certified SolidWorks Associate (CSWA)',
+    name: 'Certified SOLIDWORKS Professional (CSWP)',
     issuer: 'Dassault Systèmes',
-    description: 'Professional certification in 3D CAD modeling and mechanical design fundamentals.'
+    description: 'Advanced certification in parametric modeling, assemblies, configurations, and drawing detailing with design intent.'
   },
   {
     id: 2,
+    name: 'AutoCAD 2026 Essential Training',
+    issuer: 'LinkedIn Learning',
+    description: 'Training in 2D drafting workflows including layers, blocks, annotation, layouts, and plotting for production drawings.'
+  },
+  {
+    id: 3,
     name: 'ASME GD&T Professional Certification',
     issuer: 'Udemy',
     description: 'Comprehensive training in geometric tolerancing, datum structures, and fit control following ASME Y14.5 standards.'
   },
   {
-    id: 3,
+    id: 4,
     name: 'Lean Six Sigma Foundations',
     issuer: 'LinkedIn Learning',
     description: 'Certification in process improvement, waste reduction, and data-driven quality optimization.'
